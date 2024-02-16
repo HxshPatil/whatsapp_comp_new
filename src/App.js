@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import TextWithTitle from "./components/text_with_title/text_with_title";
-import Input from "./components/input/input";
-import Container from "./components/containers/container";
-import Header from "./components/header/header";
-import Text from "./components/text/text";
+// import TextWithTitle from "./components/text_with_title/text_with_title";
+// import Input from "./components/input/input";
+// import Container from "./components/containers/container";
+// import Header from "./components/header/header";
+// import Text from "./components/text/text";
 
 function App() {
   const [contentList, setContentList] = useState([
@@ -29,21 +29,22 @@ function App() {
   ]);
 
   const [search, setSearch] = useState("");
-  // console.log(search);
+  console.log(search);
 
-  // const addContent = () => {
-  //   setContentList([
-  //     ...contentList,
-  //     {
-  //       title: "csdb_automation_template_2",
-  //       text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
-  //     },
-  //   ]);
-  // };
+  const addContent = () => {
+    setContentList([
+      ...contentList,
+      {
+        title: "csdb_automation_template_2",
+        text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
+      },
+    ]);
+  };
 
   return (
     <div className="App">
-      {/* <button onClick={addContent}>Add Content</button> */}
+      comp_page is the page
+      {/* <button onClick={addContent}>Add Content</button>
       <div className="box-container">
         <form>
           <input onChange={(e) => setSearch(e.target.value)}></input>
@@ -79,9 +80,9 @@ function App() {
                 placeholder={"password"}
               />
               <Input
-                // helperText={
-                //   "Name can only contain lowercase, numbers & underscore"
-                // }
+                helperText={
+                  "Name can only contain lowercase, numbers & underscore"
+                }
                 pattern={"^([A-Za-z]{1,5})$"}
                 type={"text"}
                 placeholder={"name"}
@@ -92,7 +93,7 @@ function App() {
 
         <Container
           left_header={<Header title={"General"} />}
-          // right_header={"helloknsjsn"}
+          right_header={"helloknsjsn"}
           content={
             <>
               <Input
@@ -119,7 +120,7 @@ function App() {
           }
         />
       </div>
-      {/* <Input_with_tag/> */}
+      <Input_with_tag/> */}
     </div>
   );
 }

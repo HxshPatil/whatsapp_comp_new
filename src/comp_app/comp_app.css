@@ -1,8 +1,8 @@
 .page-wrapper {
     height: 1080px;
     /* width: 1920px; */
-    width:100%;
-    display:grid;
+    width: 100%;
+    display: grid;
     justify-content: center;
 }
 
@@ -14,7 +14,6 @@
 }
 
 .components-container {
-    /* width: 1008px; */
     height: fit-content;
     padding-top: calc(120px - 72px);
     display: flex;
@@ -23,21 +22,21 @@
     gap: 48px;
 }
 
-.box-container{
+.box-container {
     display: flex;
     flex-direction: column;
     gap: 38px;
-    width:480px;
-  }
-  
-  .boxA-content{
+    width: 480px;
+}
+
+.boxA-content {
     display: flex;
     flex-direction: column;
     gap: 36px;
-  }
-  
-  .boxB-content{
+}
+
+.boxB-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
+}
