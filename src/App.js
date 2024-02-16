@@ -4,26 +4,32 @@ import TextWithTitle from "./components/text_with_title/text_with_title";
 import Input from "./components/input/input";
 import Container from "./components/containers/container";
 import Header from "./components/header/header";
+import Text from "./components/text/text";
 
 function App() {
   const [contentList, setContentList] = useState([
     {
+      id: 1,
       title: "abandonment",
       text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
     },
     {
+      id: 2,
       title: "csdb_automation_template_2",
       text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
     },
-    {
-      title: "abandonment",
-      text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
-    },
-    {
-      title: "csdb_automation_template_2",
-      text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
-    },
+    { title: "Pontiac", text: "Grand Prix", id: 3 },
+    { title: "Chevrolet", text: "Camaro", id: 4 },
+    { title: "Dodge", text: "Viper", id: 5 },
+    { title: "Chevrolet", text: "Silverado 1500", id: 6 },
+    { title: "Nissan", text: "Frontier", id: 7 },
+    { title: "Mitsubishi", text: "Galant", id: 8 },
+    { title: "Volkswagen", text: "Golf III", id: 9 },
+    { title: "GMC", text: "Sonoma Club Coupe", id: 10 },
   ]);
+
+  const [search, setSearch] = useState("");
+  // console.log(search);
 
   // const addContent = () => {
   //   setContentList([
@@ -39,9 +45,19 @@ function App() {
     <div className="App">
       {/* <button onClick={addContent}>Add Content</button> */}
       <div className="box-container">
-        {contentList.map((content, index) => (
-          <TextWithTitle key={index} content={content} />
-        ))}
+        <form>
+          <input onChange={(e) => setSearch(e.target.value)}></input>
+        </form>
+        <Text textbox_text={"Template details"} />
+        {contentList
+          .filter((content) => {
+            return search.toLowerCase() === ""
+              ? content
+              : content.text.toLowerCase().includes(search)||content.title.toLowerCase().includes(search);
+          })
+          .map((content) => (
+            <TextWithTitle key={content.id} content={content} />
+          ))}
       </div>
       <div className="containers-container">
         <Container

@@ -1,7 +1,7 @@
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  /* gap: 6px; */
 }
 
 .input_container {
@@ -39,7 +39,7 @@ input:focus::placeholder {
   border: 1px solid #ced5dc;
   display: block;
   width: 100%;
-  min-width: 432px;
+  /* min-width: 432px; */
   height: 44px;
   gap: 8px;
 }
@@ -52,4 +52,5 @@ input:focus::placeholder {
 
 .spec {
   line-height: 20px;
+  padding-top: 6px;
 }

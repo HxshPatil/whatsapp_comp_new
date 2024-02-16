@@ -4,7 +4,8 @@
     font-weight: 400;
     line-height: 20px;
     text-align: left;
-    width: 480px;
+    /* width: 480px; */
+    width:100%;
     height: fit-content;
     border-radius: 4px;
     border: 1px solid #ced5dc;
