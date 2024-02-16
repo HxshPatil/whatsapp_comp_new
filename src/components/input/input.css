@@ -1,0 +1,52 @@
+.input_container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  gap: 8px;
+}
+
+.label-text {
+  position: absolute;
+  bottom: 34px;
+  left: 10px;
+  font-size: 14px;
+  color: #667085;
+  background: white;
+  padding: 0 5px;
+}
+
+.hidden{
+  display: none;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
+
+/* .input_container:focus-within .label-text {
+  display: block;
+}
+
+.input_container input:valid + .label-text {
+  display: block;
+} */
+
+.in-box {
+  padding: 10px 14px;
+  line-height: 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ced5dc;
+  display: block;
+  width: 100%;
+  min-width: 432px;
+  height: 44px;
+  /* transition: border-color 0.3s ease, box-shadow 0.3s ease; */
+}
+
+.in-box:focus {
+  border-color: #d6bbfb;
+  box-shadow: 0px 0px 0px 4px #f4ebff;
+  outline: none;
+}

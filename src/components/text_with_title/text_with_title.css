@@ -1,0 +1,15 @@
+.text_with_title_container {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    width: 480px;
+    height: fit-content;
+    border-radius: 4px;
+    border: 1px solid #ced5dc;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
