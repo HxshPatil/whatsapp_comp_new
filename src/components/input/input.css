@@ -1,4 +1,4 @@
-.input-wrapper{
+.input-wrapper {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -7,7 +7,6 @@
 .input_container {
   position: relative;
   width: 100%;
-  
 }
 
 .label-text {
@@ -16,29 +15,21 @@
   left: 10px;
   font-size: 14px;
   color: #667085;
-  /* background: #fcfcfd; */
+  background-image: linear-gradient(white, #fcfcfd);
   padding: 0 5px;
 }
 
-input{
+input {
   background: #fcfcfd;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
 input:focus::placeholder {
   opacity: 0;
 }
-
-/* .input_container:focus-within .label-text {
-  display: block;
-}
-
-.input_container input:valid + .label-text {
-  display: block;
-} */
 
 .in-box {
   padding: 10px 14px;
@@ -50,7 +41,7 @@ input:focus::placeholder {
   width: 100%;
   min-width: 432px;
   height: 44px;
-  gap:8px;
+  gap: 8px;
 }
 
 .in-box:focus {
@@ -59,7 +50,6 @@ input:focus::placeholder {
   outline: none;
 }
 
-.spec{
+.spec {
   line-height: 20px;
-
 }

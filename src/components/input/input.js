@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./input.css";
 
 function Input({ helperText, pattern, type, placeholder }) {
-
   const [isLabelVisible, setIsLabelVisible] = useState(false);
 
   const handleFocusIn = () => {
@@ -25,7 +24,7 @@ function Input({ helperText, pattern, type, placeholder }) {
         >
           {placeholder}
         </label>
-        
+
         <input
           type={type}
           id={placeholder}
@@ -38,11 +37,9 @@ function Input({ helperText, pattern, type, placeholder }) {
           onBlur={handleFocusOut}
           autoComplete="off"
         />
-        
       </div>
       {helperText !== "" && <div className="spec">{helperText}</div>}
     </div>
-      
   );
 }
 

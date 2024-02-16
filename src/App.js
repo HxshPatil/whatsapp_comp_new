@@ -4,8 +4,6 @@ import TextWithTitle from "./components/text_with_title/text_with_title";
 import Input from "./components/input/input";
 import Container from "./components/containers/container";
 import Header from "./components/header/header";
-// import Tag from "./components/tag/tag";
-// import Input_with_tag from "./components/input/input_with_tag/input_with_tag";
 
 function App() {
   const [contentList, setContentList] = useState([
@@ -24,7 +22,7 @@ function App() {
     {
       title: "csdb_automation_template_2",
       text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
-    }
+    },
   ]);
 
   // const addContent = () => {
@@ -47,65 +45,64 @@ function App() {
       </div>
       <div className="containers-container">
         <Container
-        left_header={<Header title={"General"}
-        text={"select the General settings for the template"} />}
-        right_header={<button>click</button>}
-        content={
-          <>
-            <Input
-              helperText={"password input field"}
-              pattern={
-                "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
-              }
-              type={"password"}
-              placeholder={"hello"}
+          left_header={
+            <Header
+              title={"General"}
+              text={"select the General settings for the template"}
             />
-            <Input
-              // helperText={
-              //   "Name can only contain lowercase, numbers & underscore"
-              // }
-              pattern={
-                "^([A-Za-z]{1,5})$"
-              }
-              type={"text"}
-              placeholder={"name"}
-            />
-          </>
-        }
-      />
+          }
+          right_header={<button>click</button>}
+          content={
+            <>
+              <Input
+                helperText={"password input field"}
+                pattern={
+                  "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
+                }
+                type={"password"}
+                placeholder={"password"}
+              />
+              <Input
+                // helperText={
+                //   "Name can only contain lowercase, numbers & underscore"
+                // }
+                pattern={"^([A-Za-z]{1,5})$"}
+                type={"text"}
+                placeholder={"name"}
+              />
+            </>
+          }
+        />
 
-      
-
-      <Container
-        left_header={<Header title={"General"} />}
-        // right_header={"helloknsjsn"}
-        content={
-          <>
-            <Input
-              helperText={
-                "Name can only contain lowercase, numbers & underscore"
-              }
-              pattern={
-                "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
-              }
-              type={"text"}
-              placeholder={"hello"}
-            />
-            <Input
-              helperText={
-                "Name can only contain lowercase, numbers & underscore"
-              }
-              pattern={
-                "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
-              }
-              type={"text"}
-              placeholder={"name"}
-            />
-          </>
-        }
-      />
+        <Container
+          left_header={<Header title={"General"} />}
+          // right_header={"helloknsjsn"}
+          content={
+            <>
+              <Input
+                helperText={
+                  "Template name can only contain lowercase, numbers & underscore"
+                }
+                pattern={
+                  "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
+                }
+                type={"text"}
+                placeholder={"template name"}
+              />
+              <Input
+                helperText={
+                  "Name can only contain lowercase, numbers & underscore"
+                }
+                pattern={
+                  "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
+                }
+                type={"text"}
+                placeholder={"name"}
+              />
+            </>
+          }
+        />
       </div>
-      
       {/* <Input_with_tag/> */}
     </div>
   );
