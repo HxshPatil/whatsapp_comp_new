@@ -129,11 +129,12 @@ function Comp_app() {
             <div className="boxB-header">
               <Text textbox_text={"Template details"} />
             </div>
-            {/* <form>
-            <input onChange={(e) => setSearch(e.target.value)}></input>
-            </form> */}
+            
             <div className="boxB-content">
-              <div>search box to be imported</div>
+            <form>
+            <input onChange={(e) => setSearch(e.target.value)} placeholder="searchbar to be imported"></input>
+            </form>
+              {/* <div>search box to be imported</div> */}
               {contentList
                 .filter((content) => {
                   return search.toLowerCase() === ""
