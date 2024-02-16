@@ -7,8 +7,17 @@
 
 .App {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 20px;
+  /* align-items: center; */
+  gap: 36px;
+  justify-content: space-around;
+}
+
+.containers-container{
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px; */
   align-items: center;
   gap: 36px;
 }
@@ -17,6 +26,6 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: center;
-  padding-top: 20px;
+  /* align-items: center; */
+  /* padding-top: 20px; */
 }

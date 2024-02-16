@@ -27,26 +27,28 @@ function App() {
     }
   ]);
 
-  const addContent = () => {
-    setContentList([
-      ...contentList,
-      {
-        title: "csdb_automation_template_2",
-        text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
-      },
-    ]);
-  };
+  // const addContent = () => {
+  //   setContentList([
+  //     ...contentList,
+  //     {
+  //       title: "csdb_automation_template_2",
+  //       text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
+  //     },
+  //   ]);
+  // };
 
   return (
     <div className="App">
-      <button onClick={addContent}>Add Content</button>
+      {/* <button onClick={addContent}>Add Content</button> */}
       <div className="box-container">
         {contentList.map((content, index) => (
           <TextWithTitle key={index} content={content} />
         ))}
       </div>
-      <Container
-        left_header={<Header title={"harsh"} text={"vardhan"} />}
+      <div className="containers-container">
+        <Container
+        left_header={<Header title={"General"}
+        text={"select the General settings for the template"} />}
         right_header={<button>click</button>}
         content={
           <>
@@ -72,39 +74,7 @@ function App() {
         }
       />
 
-      <Container
-        left_header={
-          <Header
-            title={"General"}
-            text={"select the General settings for the template"}
-          />
-        }
-        // right_header={"helloknsjsn"}
-        content={
-          <>
-          {/* //   <Tag name={"harsh"} />
-          //   <Tag name={"attryb"} /> */}
-            <Input
-              // helperText={""}
-              // pattern={
-              //   "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
-              // }
-              type={"text"}
-              placeholder={"hello"}
-            />
-            <Input
-              helperText={
-                "Name can only contain lowercase, numbers & underscore"
-              }
-              // pattern={
-              //   "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
-              // }
-              type={"text"}
-              placeholder={"name"}
-            />
-          </>
-        }
-      />
+      
 
       <Container
         left_header={<Header title={"General"} />}
@@ -134,6 +104,8 @@ function App() {
           </>
         }
       />
+      </div>
+      
       {/* <Input_with_tag/> */}
     </div>
   );
