@@ -133,6 +133,7 @@ function Comp_app() {
             <input onChange={(e) => setSearch(e.target.value)}></input>
             </form> */}
             <div className="boxB-content">
+              <div>search box to be imported</div>
               {contentList
                 .filter((content) => {
                   return search.toLowerCase() === ""
