@@ -20,7 +20,7 @@ function Input({ helperText, pattern, type, placeholder }) {
       <div className="input-container">
         <label
           htmlFor={placeholder}
-          className={isLabelVisible ? "label-text" : "hidden label-text"}
+          className={isLabelVisible ? "label-text text-md" : "hidden label-text text-md"}
         >
           {placeholder}
         </label>
@@ -31,14 +31,14 @@ function Input({ helperText, pattern, type, placeholder }) {
           name={placeholder}
           placeholder={placeholder}
           pattern={pattern}
-          className="in-box"
+          className="in-box text-md"
           required
           onFocus={handleFocusIn}
           onBlur={handleFocusOut}
           autoComplete="off"
         />
       </div>
-      {helperText !== "" && <div className="spec">{helperText}</div>}
+      {helperText !== "" && <div className="spec text-sm">{helperText}</div>}
     </div>
   );
 }

@@ -4,8 +4,8 @@ import "./header.css";
 function Header({ title, text }) {
   return (
     <>
-      <div className="header-title">{title}</div>
-      <div className="header-text">{text}</div>
+      <div className="header-title text-lg--sb">{title}</div>
+      <div className="header-text text-sm">{text}</div>
     </>
   );
 }

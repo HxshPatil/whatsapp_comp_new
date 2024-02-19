@@ -5,10 +5,10 @@ function TextWithTitle({ content }) {
 
   return (
     <div className="text-with-title-container">
-      <div className="title">
-        <b>{content.title}</b>
+      <div className="title  text-sm--sb">
+        {content.title}
       </div>
-      <div className="text">{content.text}</div>
+      <div className="text text-sm ">{content.text}</div>
     </div>
   );
 }
