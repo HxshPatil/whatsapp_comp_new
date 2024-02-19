@@ -8,6 +8,7 @@
     height: fit-content;
     border-radius: 4px;
     border: 1px solid #ced5dc;
+    background-color: white;
     padding: 12px;
     display: flex;
     flex-direction: column;

@@ -39,6 +39,7 @@ input:focus::placeholder {
   /* min-width: 432px; */
   height: 44px;
   gap: 8px;
+  background-color: white;
 }
 
 .in-box:focus {
