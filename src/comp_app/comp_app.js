@@ -64,11 +64,11 @@ function Comp_app() {
         <div className="components-container">
           <div className="box-container">
             <div className="boxA-header">
-              <Text textbox_text={"Broadcast details"} />
+              <Text textboxText={"Broadcast details"} />
             </div>
             <div className="boxA-content">
               <Container
-                left_header={
+                leftHeader={
                   <Header
                     title={"General"}
                     text={"Select the General settings for the template"}
@@ -89,7 +89,7 @@ function Comp_app() {
                 }
               />
               <Container
-                left_header={
+                leftHeader={
                   <Header
                     title={"Targeting"}
                     text={"Select who you want to send the Broadcast to"}
@@ -111,7 +111,7 @@ function Comp_app() {
                 }
               />
               <Container
-                left_header={
+                leftHeader={
                   <Header
                     title={"Schedule Broadcast"}
                     text={
@@ -139,7 +139,7 @@ function Comp_app() {
 
           <div className="box-container">
             <div className="boxB-header">
-              <Text textbox_text={"Template details"} />
+              <Text textboxText={"Template details"} />
             </div>
 
             <div className="boxB-content">
@@ -150,6 +150,7 @@ function Comp_app() {
                 ></input>
               </form>
               {/* <div>search box to be imported</div> */}
+              <div className="content-wrapper">
               {contentList
                 .filter((content) => {
                   // console.log(content.text.toLowerCase().includes(search.toLowerCase()) , '********',content.title.toLowerCase().includes(search.toLowerCase()));
@@ -165,6 +166,7 @@ function Comp_app() {
                 .map((content) => (
                   <TextWithTitle key={content.id} content={content} />
                 ))}
+              </div>
             </div>
           </div>
         </div>

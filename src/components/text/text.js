@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Textbox({textbox_text}) {
+function Textbox({textboxText}) {
   return (
-    <div className="text-container"><b>{textbox_text}</b></div>
+    <div className="text-container"><b>{textboxText}</b></div>
   )
 }
 

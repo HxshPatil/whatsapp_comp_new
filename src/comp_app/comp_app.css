@@ -15,11 +15,13 @@
     width: 100%;
     background-color: black;
     color: white;
+    position: fixed;
+    z-index: 1;
 }
 
 .components-container {
     height: fit-content;
-    padding-top: 48px;
+    padding-top: 120px;
     display: flex;
     flex-direction: row;
     left: 456px;
@@ -31,17 +33,35 @@
     flex-direction: column;
     gap: 38px;
     width: 480px;
+    
+    /* background-color: aquamarine; */
 }
 
 .boxA-content {
     display: flex;
     flex-direction: column;
     gap: 36px;
+    overflow-y: scroll;
+    height:calc(100vh - 180px);
+    /* background-color: rgb(226, 228, 192); */
+    /* background-color: aquamarine; */
 }
 
 .boxB-content {
+    /* overflow-y: scroll; */
     display: flex;
     flex-direction: column;
     gap: 20px;
+   
     /* overflow-y: scroll; */
+}
+
+.content-wrapper{
+
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    height:calc(100vh - 220px);
+    gap: 20px;
+    /* background-color: rgb(226, 228, 192); */
 }
