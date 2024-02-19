@@ -11,16 +11,13 @@
 
 .label-text {
   position: absolute;
-  bottom: 34px;
+  bottom: 37px;
   left: 10px;
   font-size: 14px;
   color: #667085;
-  background-image: linear-gradient(white, #fcfcfd);
+  background-color: white;
+  /* background-image: linear-gradient(white, #fcfcfd); */
   padding: 0 5px;
-}
-
-input {
-  background: #fcfcfd;
 }
 
 .hidden {

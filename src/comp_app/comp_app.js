@@ -38,15 +38,27 @@ function Comp_app() {
       title: "New collection",
       text: "Hey [customer name] the wait 🕜 is finally over! We know you wanted you to be the first to hear about our spring collection 🏃🏻‍♀️🏃🏽‍♂️ Check it out here! [URL].",
     },
-    { title: "Restock available", text: "As promised, [customer name], you’re the first to know that [item] is back in stock 🥳 Get it immediately at [URL] or visit any of our retail outlets 🏢 We’re located at: [list of outlets]. Let us know if we can reserve one in-store for you!", id: 7 },
-    { title: "Loyalty reward", text: "Dear [customer name], thank you for being a loyal member of [brand name] 🙏 Here’s an exclusive 10% off our new collection with the promo code 10TQ. There’s also a free gift 🎁 for orders above [amount] as a token of our appreciation. Shop now at [URL].", id: 8 },
-    { title: "Re-engagement", text: "It’s been a while, [customer name] 👋 Since your last visit, we have expanded our products and services to provide the best wellness experience around. Why not drop by for a yoga 🧘 class or a matcha 🍵 tasting session? Reserve your workshop of choice at [URL]. We hope to see you!", id: 9 },
+    {
+      title: "Restock available",
+      text: "As promised, [customer name], you’re the first to know that [item] is back in stock 🥳 Get it immediately at [URL] or visit any of our retail outlets 🏢 We’re located at: [list of outlets]. Let us know if we can reserve one in-store for you!",
+      id: 7,
+    },
+    {
+      title: "Loyalty reward",
+      text: "Dear [customer name], thank you for being a loyal member of [brand name] 🙏 Here’s an exclusive 10% off our new collection with the promo code 10TQ. There’s also a free gift 🎁 for orders above [amount] as a token of our appreciation. Shop now at [URL].",
+      id: 8,
+    },
+    {
+      title: "Re-engagement",
+      text: "It’s been a while, [customer name] 👋 Since your last visit, we have expanded our products and services to provide the best wellness experience around. Why not drop by for a yoga 🧘 class or a matcha 🍵 tasting session? Reserve your workshop of choice at [URL]. We hope to see you!",
+      id: 9,
+    },
     // { title: "GMC", text: "Sonoma Club Coupe", id: 10 },
   ]);
 
   const [search, setSearch] = useState("");
   return (
-    <div>
+    <div className="complete-wrapper">
       <div className="navbar-dummy">navbar component to be imported</div>
       <div className="page-wrapper">
         <div className="components-container">
@@ -129,19 +141,26 @@ function Comp_app() {
             <div className="boxB-header">
               <Text textbox_text={"Template details"} />
             </div>
-            
+
             <div className="boxB-content">
-            <form>
-            <input onChange={(e) => setSearch(e.target.value)} placeholder="searchbar to be imported"></input>
-            </form>
+              <form>
+                <input
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="searchbar to be imported"
+                ></input>
+              </form>
               {/* <div>search box to be imported</div> */}
               {contentList
                 .filter((content) => {
                   // console.log(content.text.toLowerCase().includes(search.toLowerCase()) , '********',content.title.toLowerCase().includes(search.toLowerCase()));
                   return search.toLowerCase() === ""
                     ? content
-                    : content.text.toLowerCase().includes(search.toLowerCase()) ||
-                        content.title.toLowerCase().includes(search.toLowerCase());
+                    : content.text
+                        .toLowerCase()
+                        .includes(search.toLowerCase()) ||
+                        content.title
+                          .toLowerCase()
+                          .includes(search.toLowerCase());
                 })
                 .map((content) => (
                   <TextWithTitle key={content.id} content={content} />
