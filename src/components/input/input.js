@@ -17,7 +17,7 @@ function Input({ helperText, pattern, type, placeholder }) {
 
   return (
     <div className="input-wrapper">
-      <div className="input_container">
+      <div className="input-container">
         <label
           htmlFor={placeholder}
           className={isLabelVisible ? "label-text" : "hidden label-text"}

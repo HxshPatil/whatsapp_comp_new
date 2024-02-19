@@ -6,7 +6,7 @@ import Container from "../components/containers/container";
 import Header from "../components/header/header";
 import Text from "../components/text/text";
 
-function Comp_app() {
+function CompApp() {
   const [contentList, setContentList] = useState([
     {
       id: 1,
@@ -63,10 +63,10 @@ function Comp_app() {
       <div className="page-wrapper">
         <div className="components-container">
           <div className="box-container">
-            <div className="boxA-header">
+            <div className="box-a-header">
               <Text textboxText={"Broadcast details"} />
             </div>
-            <div className="boxA-content">
+            <div className="box-a-content">
               <Container
                 leftHeader={
                   <Header
@@ -88,6 +88,28 @@ function Comp_app() {
                   </>
                 }
               />
+              <Container
+                leftHeader={
+                  <Header
+                    title={"General"}
+                    text={"Select the General settings for the template"}
+                  />
+                }
+                //   right_header={<button>click</button>}
+                content={
+                  <>
+                    <Input
+                      // helperText={"password input field"}
+                      // pattern={
+                      //   "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
+                      // }
+                      type={"text"}
+                      placeholder={"broadcast name"}
+                    />
+                  </>
+                }
+              />
+
               <Container
                 leftHeader={
                   <Header
@@ -138,11 +160,11 @@ function Comp_app() {
           </div>
 
           <div className="box-container">
-            <div className="boxB-header">
+            <div className="box-b-header">
               <Text textboxText={"Template details"} />
             </div>
 
-            <div className="boxB-content">
+            <div className="box-b-content">
               <form>
                 <input
                   onChange={(e) => setSearch(e.target.value)}
@@ -151,21 +173,21 @@ function Comp_app() {
               </form>
               {/* <div>search box to be imported</div> */}
               <div className="content-wrapper">
-              {contentList
-                .filter((content) => {
-                  // console.log(content.text.toLowerCase().includes(search.toLowerCase()) , '********',content.title.toLowerCase().includes(search.toLowerCase()));
-                  return search.toLowerCase() === ""
-                    ? content
-                    : content.text
-                        .toLowerCase()
-                        .includes(search.toLowerCase()) ||
-                        content.title
+                {contentList
+                  .filter((content) => {
+                    // console.log(content.text.toLowerCase().includes(search.toLowerCase()) , '********',content.title.toLowerCase().includes(search.toLowerCase()));
+                    return search.toLowerCase() === ""
+                      ? content
+                      : content.text
                           .toLowerCase()
-                          .includes(search.toLowerCase());
-                })
-                .map((content) => (
-                  <TextWithTitle key={content.id} content={content} />
-                ))}
+                          .includes(search.toLowerCase()) ||
+                          content.title
+                            .toLowerCase()
+                            .includes(search.toLowerCase());
+                  })
+                  .map((content) => (
+                    <TextWithTitle key={content.id} content={content} />
+                  ))}
               </div>
             </div>
           </div>
@@ -175,4 +197,4 @@ function Comp_app() {
   );
 }
 
-export default Comp_app;
+export default CompApp;

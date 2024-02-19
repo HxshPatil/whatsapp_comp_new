@@ -1,10 +1,10 @@
 import React from "react";
 import "./text_with_title.css";
 
-function Text_with_title({ content }) {
+function TextWithTitle({ content }) {
 
   return (
-    <div className="text_with_title_container">
+    <div className="text-with-title-container">
       <div className="title">
         <b>{content.title}</b>
       </div>
@@ -13,4 +13,4 @@ function Text_with_title({ content }) {
   );
 }
 
-export default Text_with_title;
+export default TextWithTitle;

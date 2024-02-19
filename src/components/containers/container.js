@@ -5,8 +5,8 @@ function Container({ leftHeader, rightHeader, content }) {
   return (
     <div className="container">
       <div className="container-header">
-        <div className="left_header">{leftHeader}</div>
-        <div className="right_header">{rightHeader}</div>
+        <div className="left-header">{leftHeader}</div>
+        <div className="right-header">{rightHeader}</div>
       </div>
       <div className="container-content">{content}</div>
     </div>
