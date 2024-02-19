@@ -15,7 +15,7 @@
 
 .components-container {
     height: fit-content;
-    padding-top: calc(120px - 72px);
+    padding-top: 48px;
     display: flex;
     flex-direction: row;
     left: 456px;

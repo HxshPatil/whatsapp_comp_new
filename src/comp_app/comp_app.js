@@ -16,31 +16,31 @@ function Comp_app() {
     {
       id: 2,
       title: "csdb_automation_template_2",
-      text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
+      text: "Aello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
     },
-    {
-      id: 3,
-      title: "abandonment",
-      text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
-    },
-    {
-      id: 4,
-      title: "abandonment",
-      text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
-    },
-    {
-      id: 5,
-      title: "abandonment",
-      text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
-    },
+    // {
+    //   id: 3,
+    //   title: "abandonment",
+    //   text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
+    // },
+    // {
+    //   id: 4,
+    //   title: "abandonment",
+    //   text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
+    // },
+    // {
+    //   id: 5,
+    //   title: "abandonment",
+    //   text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
+    // },
     {
       id: 6,
-      title: "abandonment",
-      text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
+      title: "New collection",
+      text: "Hey [customer name] the wait 🕜 is finally over! We know you wanted you to be the first to hear about our spring collection 🏃🏻‍♀️🏃🏽‍♂️ Check it out here! [URL].",
     },
-    // { title: "Nissan", text: "Frontier", id: 7 },
-    // { title: "Mitsubishi", text: "Galant", id: 8 },
-    // { title: "Volkswagen", text: "Golf III", id: 9 },
+    { title: "Restock available", text: "As promised, [customer name], you’re the first to know that [item] is back in stock 🥳 Get it immediately at [URL] or visit any of our retail outlets 🏢 We’re located at: [list of outlets]. Let us know if we can reserve one in-store for you!", id: 7 },
+    { title: "Loyalty reward", text: "Dear [customer name], thank you for being a loyal member of [brand name] 🙏 Here’s an exclusive 10% off our new collection with the promo code 10TQ. There’s also a free gift 🎁 for orders above [amount] as a token of our appreciation. Shop now at [URL].", id: 8 },
+    { title: "Re-engagement", text: "It’s been a while, [customer name] 👋 Since your last visit, we have expanded our products and services to provide the best wellness experience around. Why not drop by for a yoga 🧘 class or a matcha 🍵 tasting session? Reserve your workshop of choice at [URL]. We hope to see you!", id: 9 },
     // { title: "GMC", text: "Sonoma Club Coupe", id: 10 },
   ]);
 
@@ -137,10 +137,11 @@ function Comp_app() {
               {/* <div>search box to be imported</div> */}
               {contentList
                 .filter((content) => {
+                  // console.log(content.text.toLowerCase().includes(search.toLowerCase()) , '********',content.title.toLowerCase().includes(search.toLowerCase()));
                   return search.toLowerCase() === ""
                     ? content
-                    : content.text.toLowerCase().includes(search) ||
-                        content.title.toLowerCase().includes(search);
+                    : content.text.toLowerCase().includes(search.toLowerCase()) ||
+                        content.title.toLowerCase().includes(search.toLowerCase());
                 })
                 .map((content) => (
                   <TextWithTitle key={content.id} content={content} />
