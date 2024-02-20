@@ -4,6 +4,7 @@ import "./text_with_title.css";
 function TextWithTitle({ content }) {
   const handleClick = (data) => {
     console.log(data);
+    alert(data.id);
   };
   return (
     <div
