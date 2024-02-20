@@ -184,14 +184,9 @@ function CompApp() {
                     text={"Select the General settings for the template"}
                   />
                 }
-                //   right_header={<button>click</button>}
                 content={
                   <>
                     <Input
-                      // helperText={"password input field"}
-                      // pattern={
-                      //   "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
-                      // }
                       type={"text"}
                       placeholder={"broadcast name"}
                     />
@@ -206,17 +201,8 @@ function CompApp() {
                     text={"Select who you want to send the Broadcast to"}
                   />
                 }
-                //   right_header={<button>click</button>}
                 content={
                   <>
-                    {/* <Input
-                    helperText={"password input field"}
-                    pattern={
-                      "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
-                    }
-                    type={"text"}
-                    placeholder={"broadcast name"}
-                  /> */}
                     dropdown to be imported
                   </>
                 }
@@ -230,17 +216,8 @@ function CompApp() {
                     }
                   />
                 }
-                //   right_header={<button>click</button>}
                 content={
                   <>
-                    {/* <Input
-                    // helperText={"password input field"}
-                    // pattern={
-                    //   "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
-                    // }
-                    type={"text"}
-                    placeholder={"broadcast name"}
-                  /> */}
                     date and time picker to be imported
                   </>
                 }
@@ -260,11 +237,10 @@ function CompApp() {
                   placeholder="searchbar to be imported"
                 ></input>
               </form>
-              {/* <div>search box to be imported</div> */}
-              <div className="content-wrapper">
+              <div className="content-wrapper" 
+              >
                 {contentList
                   .filter((content) => {
-                    // console.log(content.text.toLowerCase().includes(search.toLowerCase()) , '********',content.title.toLowerCase().includes(search.toLowerCase()));
                     return search.toLowerCase() === ""
                       ? content
                       : content.text

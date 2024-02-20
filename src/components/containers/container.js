@@ -14,3 +14,27 @@ function Container({ leftHeader, rightHeader, content }) {
 }
 
 export default Container;
+
+
+
+{/* <Container
+  leftHeader={
+    <Header
+      title={"General"}
+      text={"Select the General settings for the template"}
+    />
+  }
+  right_header={<button>click</button>}
+  content={
+    <>
+      <Input
+        helperText={"password input field"}
+        pattern={
+          "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
+        }
+        type={"text"}
+        placeholder={"broadcast name"}
+      />
+    </>
+  }
+/>; */}
