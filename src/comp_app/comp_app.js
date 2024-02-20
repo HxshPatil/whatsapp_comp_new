@@ -186,10 +186,7 @@ function CompApp() {
                 }
                 content={
                   <>
-                    <Input
-                      type={"text"}
-                      placeholder={"broadcast name"}
-                    />
+                    <Input type={"text"} placeholder={"broadcast name"} />
                   </>
                 }
               />
@@ -201,11 +198,7 @@ function CompApp() {
                     text={"Select who you want to send the Broadcast to"}
                   />
                 }
-                content={
-                  <>
-                    dropdown to be imported
-                  </>
-                }
+                content={<>dropdown to be imported</>}
               />
               <Container
                 leftHeader={
@@ -216,11 +209,7 @@ function CompApp() {
                     }
                   />
                 }
-                content={
-                  <>
-                    date and time picker to be imported
-                  </>
-                }
+                content={<>date and time picker to be imported</>}
               />
             </div>
           </div>
@@ -237,16 +226,15 @@ function CompApp() {
                   placeholder="searchbar to be imported"
                 ></input>
               </form>
-              <div className="content-wrapper" 
-              >
+              <div className="content-wrapper">
                 {contentList
                   .filter((content) => {
                     return search.toLowerCase() === ""
                       ? content
-                      : content.text
+                      : content.template.name
                           .toLowerCase()
                           .includes(search.toLowerCase()) ||
-                          content.title
+                          content.template.components[1].text
                             .toLowerCase()
                             .includes(search.toLowerCase());
                   })
