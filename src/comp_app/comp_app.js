@@ -10,19 +10,46 @@ function CompApp() {
   const [contentList, setContentList] = useState([
     {
       id: 1,
-      title: "abandonment",
-      text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
+      template: {
+        name: "abandonment",
+        components: [
+          {
+            text: "Dear [customer name], thank you for being a loyal member of [brand name] 🙏 Here’s an exclusive 10% off our new collection with the promo code 10TQ. There’s also a free gift 🎁 for orders above [amount] as a token of our appreciation. Shop now at [URL].",
+          },
+          {
+            text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
+          },
+        ],
+      },
     },
     {
       id: 2,
-      title: "csdb_automation_template_2",
-      text: "Aello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
+      template: {
+        name: "csdb_automation_template_2",
+        components: [
+          {
+            text: "Aello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
+          },
+          {
+            text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
+          },
+        ],
+      },
     },
-    // {
-    //   id: 3,
-    //   title: "abandonment",
-    //   text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
-    // },
+    {
+      id: 3,
+      template: {
+        name: "Re-engagement",
+        components: [
+          {
+            text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
+          },
+          {
+            text: "It’s been a while, [customer name] 👋 Since your last visit, we have expanded our products and services to provide the best wellness experience around. Why not drop by for a yoga 🧘 class or a matcha 🍵 tasting session? Reserve your workshop of choice at [URL]. We hope to see you!",
+          },
+        ],
+      },
+    },
     // {
     //   id: 4,
     //   title: "abandonment",
@@ -33,27 +60,110 @@ function CompApp() {
     //   title: "abandonment",
     //   text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
     // },
+    // {
+    //   id: 6,
+    //   title: "New collection",
+    //   text: "Hey [customer name] the wait 🕜 is finally over! We know you wanted you to be the first to hear about our spring collection 🏃🏻‍♀️🏃🏽‍♂️ Check it out here! [URL].",
+    // },
+    // {
+    //   title: "Restock available",
+    //   text: "As promised, [customer name], you’re the first to know that [item] is back in stock 🥳 Get it immediately at [URL] or visit any of our retail outlets 🏢 We’re located at: [list of outlets]. Let us know if we can reserve one in-store for you!",
+    //   id: 7,
+    // },
+    // {
+    //   title: "Loyalty reward",
+    //   text: "Dear [customer name], thank you for being a loyal member of [brand name] 🙏 Here’s an exclusive 10% off our new collection with the promo code 10TQ. There’s also a free gift 🎁 for orders above [amount] as a token of our appreciation. Shop now at [URL].",
+    //   id: 8,
+    // },
+    // {
+    //   title: "Re-engagement",
+    //   text: "It’s been a while, [customer name] 👋 Since your last visit, we have expanded our products and services to provide the best wellness experience around. Why not drop by for a yoga 🧘 class or a matcha 🍵 tasting session? Reserve your workshop of choice at [URL]. We hope to see you!",
+    //   id: 9,
+    // },
     {
-      id: 6,
-      title: "New collection",
-      text: "Hey [customer name] the wait 🕜 is finally over! We know you wanted you to be the first to hear about our spring collection 🏃🏻‍♀️🏃🏽‍♂️ Check it out here! [URL].",
+      id: 4,
+      template: {
+        name: "seasonal_promotion",
+        language: "en_US",
+        category: "MARKETING",
+        components: [
+          {
+            type: "HEADER",
+            format: "TEXT",
+            text: "Our {{1}} is on!",
+            example: {
+              header_text: ["Summer Sale"],
+            },
+          },
+          {
+            type: "BODY",
+            text: "Shop now through {{1}} and use code {{2}} to get {{3}} off of all merchandise.",
+            example: {
+              body_text: [["the end of August", "25OFF", "25%"]],
+            },
+          },
+          {
+            type: "FOOTER",
+            text: "Use the buttons below to manage your marketing subscriptions",
+          },
+          {
+            type: "BUTTONS",
+            buttons: [
+              {
+                type: "QUICK_REPLY",
+                text: "Unsubscribe from Promos",
+              },
+              {
+                type: "QUICK_REPLY",
+                text: "Unsubscribe from All",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
-      title: "Restock available",
-      text: "As promised, [customer name], you’re the first to know that [item] is back in stock 🥳 Get it immediately at [URL] or visit any of our retail outlets 🏢 We’re located at: [list of outlets]. Let us know if we can reserve one in-store for you!",
-      id: 7,
+      id: 5,
+      template: {
+        name: "Valentine's day Sale",
+        language: "en_US",
+        category: "MARKETING",
+        components: [
+          {
+            type: "HEADER",
+            format: "TEXT",
+            text: "Our {{1}} is on!",
+            example: {
+              header_text: ["Summer Sale"],
+            },
+          },
+          {
+            type: "BODY",
+            text: "Give them the love they deserve. Shop now through {{1}} and use code {{2}} to get {{3}} off of all merchandise.",
+            example: {
+              body_text: [["the end of August", "25OFF", "25%"]],
+            },
+          },
+          {
+            type: "FOOTER",
+            text: "Use the buttons below to manage your marketing subscriptions",
+          },
+          {
+            type: "BUTTONS",
+            buttons: [
+              {
+                type: "QUICK_REPLY",
+                text: "Unsubscribe from Promos",
+              },
+              {
+                type: "QUICK_REPLY",
+                text: "Unsubscribe from All",
+              },
+            ],
+          },
+        ],
+      },
     },
-    {
-      title: "Loyalty reward",
-      text: "Dear [customer name], thank you for being a loyal member of [brand name] 🙏 Here’s an exclusive 10% off our new collection with the promo code 10TQ. There’s also a free gift 🎁 for orders above [amount] as a token of our appreciation. Shop now at [URL].",
-      id: 8,
-    },
-    {
-      title: "Re-engagement",
-      text: "It’s been a while, [customer name] 👋 Since your last visit, we have expanded our products and services to provide the best wellness experience around. Why not drop by for a yoga 🧘 class or a matcha 🍵 tasting session? Reserve your workshop of choice at [URL]. We hope to see you!",
-      id: 9,
-    },
-    // { title: "GMC", text: "Sonoma Club Coupe", id: 10 },
   ]);
 
   const [search, setSearch] = useState("");
@@ -67,27 +177,6 @@ function CompApp() {
               <Text textboxText={"Broadcast details"} />
             </div>
             <div className="box-a-content">
-              <Container
-                leftHeader={
-                  <Header
-                    title={"General"}
-                    text={"Select the General settings for the template"}
-                  />
-                }
-                //   right_header={<button>click</button>}
-                content={
-                  <>
-                    <Input
-                      // helperText={"password input field"}
-                      // pattern={
-                      //   "^([A-Za-z]{1,20})([ ]{0,1})([A-Za-z]{1,20})?([ ]{0,1})?([A-Za-z]{1,20})$"
-                      // }
-                      type={"text"}
-                      placeholder={"broadcast name"}
-                    />
-                  </>
-                }
-              />
               <Container
                 leftHeader={
                   <Header

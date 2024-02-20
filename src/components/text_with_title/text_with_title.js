@@ -6,9 +6,9 @@ function TextWithTitle({ content }) {
   return (
     <div className="text-with-title-container">
       <div className="title  text-sm--sb">
-        {content.title}
+        {content.template.name}
       </div>
-      <div className="text text-sm ">{content.text}</div>
+      <div className="text text-sm ">{content.template.components[1].text}</div>
     </div>
   );
 }
