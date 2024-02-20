@@ -1,0 +1,11 @@
+.s-page{
+    display: flex;
+}
+
+.Navbar{
+    height: 72px !important;
+}
+
+.s-right-container{
+    width: 100%;
+}

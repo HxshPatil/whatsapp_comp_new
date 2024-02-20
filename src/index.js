@@ -4,12 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Comp_app from './comp_app/comp_app';
+import Template from './sachinPages/template/template';
 import {Button} from '@attrybtech/attryb-ui'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <>
+    {/* <Template/> */}
     <Comp_app/>
+    </>
   </React.StrictMode>
 );
 
