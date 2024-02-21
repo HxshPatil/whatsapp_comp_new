@@ -1,61 +1,19 @@
 import React, { useState } from "react";
 import "./comp_app.css";
 import TextWithTitle from "../components/text_with_title/text_with_title";
-import Input from "../components/input/input";
+// import Input from "../components/input/input.tsx";
 import Container from "../components/containers/container";
 import Header from "../components/header/header";
 import Text from "../components/text/text";
+import Container1 from "../components/allCompsTSX/containers/container.tsx";
+import Input3 from "../components/input/input.tsx";
+import Input1 from "../components/input/input.js";
+import Input2 from "../components/input/input2.tsx"
+import {Input} from "@attrybtech/attryb-ui"
+
 
 function CompApp() {
   const contentList = [
-    {
-      id: 1,
-      template: {
-        name: "abandonment",
-        components: [
-          {
-            type: "HEADER",
-            text: "Dear [customer name], thank you for being a loyal member of [brand name] 🙏 Here’s an exclusive 10% off our new collection with the promo code 10TQ. There’s also a free gift 🎁 for orders above [amount] as a token of our appreciation. Shop now at [URL].",
-          },
-          {
-            type: "BODY",
-            text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
-          },
-        ],
-      },
-    },
-    {
-      id: 2,
-      template: {
-        name: "csdb_automation_template_2",
-        components: [
-          {
-            type: "HEADER",
-            text: "Aello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
-          },
-          {
-            type: "BODY",
-            text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
-          },
-        ],
-      },
-    },
-    {
-      id: 3,
-      template: {
-        name: "Re-engagement",
-        components: [
-          {
-            type: "HEADER",
-            text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
-          },
-          {
-            type: "BODY",
-            text: "It’s been a while, [customer name] 👋 Since your last visit, we have expanded our products and services to provide the best wellness experience around. Why not drop by for a yoga 🧘 class or a matcha 🍵 tasting session? Reserve your workshop of choice at [URL]. We hope to see you!",
-          },
-        ],
-      },
-    },
     {
       id: 4,
       template: {
@@ -143,6 +101,7 @@ function CompApp() {
   ];
 
   const [search, setSearch] = useState("");
+  const [value, setValue] = useState("")
   return (
     <div className="complete-wrapper">
       <div className="navbar-dummy">navbar component to be imported</div>
@@ -153,7 +112,7 @@ function CompApp() {
               <Text textboxText={"Broadcast details"} />
             </div>
             <div className="box-a-content">
-              <Container
+              <Container1
                 leftHeader={
                   <Header
                     title={"General"}
@@ -162,7 +121,18 @@ function CompApp() {
                 }
                 content={
                   <>
-                    <Input type={"text"} placeholder={"Broadcast name"} />
+                    <Input2 state={"default"}
+                        placeholder={"Broadcast name"}
+                        preFilledValue={value}
+                        maxCharsLimit={10}
+                        onChange={( event) => {
+                            setValue(event?.target?.value)}} />
+                    <Input state={"filled"}
+                        placeholder={"Lorem is ipsum..."}
+                        preFilledValue={value}
+                        maxCharsLimit={10}
+                        onChange={( event) => {
+                            setValue(event?.target?.value)}} />
                   </>
                 }
               />
@@ -227,6 +197,55 @@ function CompApp() {
 }
 
 export default CompApp;
+
+// {
+//   id: 1,
+//   template: {
+//     name: "abandonment",
+//     components: [
+//       {
+//         type: "HEADER",
+//         text: "Dear [customer name], thank you for being a loyal member of [brand name] 🙏 Here’s an exclusive 10% off our new collection with the promo code 10TQ. There’s also a free gift 🎁 for orders above [amount] as a token of our appreciation. Shop now at [URL].",
+//       },
+//       {
+//         type: "BODY",
+//         text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
+//       },
+//     ],
+//   },
+// },
+// {
+//   id: 2,
+//   template: {
+//     name: "csdb_automation_template_2",
+//     components: [
+//       {
+//         type: "HEADER",
+//         text: "Aello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
+//       },
+//       {
+//         type: "BODY",
+//         text: "Hello {{Info.First Name}} I am reaching out to you {{Info.First Name}}.Let us know incase you have further queries.",
+//       },
+//     ],
+//   },
+// },
+// {
+//   id: 3,
+//   template: {
+//     name: "Re-engagement",
+//     components: [
+//       {
+//         type: "HEADER",
+//         text: "Hi {{Info.First Name}}, 🛒Looks like you left something in your cart. We wanted to make sure youhad the chance to get what you needed. Get Flat 20% off on all purchases. UseCODE : CART20 Hurry! Only valid for 24 Hours⏰⏰ To unsubscribe from messages, please type STOP.",
+//       },
+//       {
+//         type: "BODY",
+//         text: "It’s been a while, [customer name] 👋 Since your last visit, we have expanded our products and services to provide the best wellness experience around. Why not drop by for a yoga 🧘 class or a matcha 🍵 tasting session? Reserve your workshop of choice at [URL]. We hope to see you!",
+//       },
+//     ],
+//   },
+// },
 
 // {
 //   id: 4,

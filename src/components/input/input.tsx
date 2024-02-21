@@ -1,15 +1,26 @@
-import React, { useState } from "react";
-import "./input.css";
+import React, { useState, FC, FocusEvent } from "react";
+import "./input.sass";
 
-function Input1({ helperText, pattern, type, placeholder }) {
-  const [isLabelVisible, setIsLabelVisible] = useState(false);
+interface InputProps {
+  helperText?: string;
+  pattern?: string;
+  inputType?: string;
+  placeholder?: string;
+}
 
-  const handleFocusIn = () => {
+const Input3: FC<InputProps> = ({
+  helperText,
+  pattern,
+  inputType,
+  placeholder,
+}) => {
+  const [isLabelVisible, setIsLabelVisible] = useState<boolean>(false);
+
+  const handleFocusIn = (): void => {
     setIsLabelVisible(true);
-    console.log("1  1");
   };
 
-  const handleFocusOut = (e) => {
+  const handleFocusOut = (e: FocusEvent<HTMLInputElement>): void => {
     if (e.target.value === "") {
       setIsLabelVisible(false);
     }
@@ -20,13 +31,16 @@ function Input1({ helperText, pattern, type, placeholder }) {
       <div className="input-container">
         <label
           htmlFor={placeholder}
-          className={isLabelVisible ? "label-text text-md" : "hidden label-text text-md"}
+          className={
+            isLabelVisible ? "label-text text-md" : "hidden label-text text-md"
+          }
         >
           {placeholder}
         </label>
 
         <input
-          type={type}
+          role="input"
+          type={inputType}
           id={placeholder}
           name={placeholder}
           placeholder={placeholder}
@@ -41,6 +55,6 @@ function Input1({ helperText, pattern, type, placeholder }) {
       {helperText !== "" && <div className="spec text-sm">{helperText}</div>}
     </div>
   );
-}
+};
 
-export default Input1;
+export default Input3;
